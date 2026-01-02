@@ -1,5 +1,6 @@
 name: "hello world workflow / pipeline"
 on:
+ push:
  schedule:
    - cron: '3,33 * * * *'
  workflow_dispatch:
@@ -8,6 +9,8 @@ jobs:
   hello_world_job:
    runs-on: ubuntu-latest
    steps:
+     - name: "print event type"
+       run: echo "event type is - ${{github.event_name}}"
      - name: "greet to world step" 
        run: echo "Hello World"
      - name: "print current time"
