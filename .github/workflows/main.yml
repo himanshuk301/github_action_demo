@@ -1,11 +1,15 @@
 name: "hello world workflow / pipeline"
 on:
+ schedule:
+   - cron: '3,33 * * * *'
  workflow_dispatch:
 
 jobs:
-  hello_world:
+  hello_world_job:
    runs-on: ubuntu-latest
    steps:
-     - name: "greet to world" 
+     - name: "greet to world step" 
        run: echo "Hello World"
+     - name: "print current time"
+       run: echo "current time is $(date)"
  
