@@ -1,8 +1,8 @@
 name: "hello world workflow / pipeline"
 on:
  push:
- schedule:
-   - cron: '3,33 * * * *'
+ # schedule:
+ #   - cron: '3,33 * * * *'
  workflow_dispatch:
 
 jobs:
